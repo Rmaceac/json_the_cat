@@ -1,11 +1,9 @@
 const request = require('request');
+// userQuery takes in one(1) user input argument
 const userQuery = process.argv[2];
 // console.log("User Input: ", userQuery);
 const URL = `https://api.thecatapi.com/v1/breeds/search?q=${userQuery}`;
 
-// if (!userQuery) {
-//   return "Error: no search parameter given";
-// }
 request(URL, (error, response, body) => {
   const data = JSON.parse(body);
   //if an error occurs, prints basic error information
